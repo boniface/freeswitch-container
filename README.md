@@ -185,3 +185,11 @@ The following modules are available in the container and can be loaded at runtim
 - `mod_xml_radius` - RADIUS authentication gateway.
 - `mod_xml_rpc` - XML Remote Procedure Calls. Issue commands from your web application.
 - `mod_xml_scgi` - Simple Common Gateway Interface.
+- 
+To enable sendmail to use STARTTLS, you need to:
+1) Add this line to /etc/mail/sendmail.mc and optionally
+   to /etc/mail/submit.mc:
+  include(`/etc/mail/tls/starttls.m4')dnl
+2) Run sendmailconfig
+3) Restart sendmail
+
